@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "jt-resume-counter"
+s3_bucket = "jt-resume-backend-code-deploy-bucket"
+s3_prefix = "jt-resume-counter"
+region = "us-east-1"
+confirm_changeset = false
+capabilities = "CAPABILITY_IAM"
