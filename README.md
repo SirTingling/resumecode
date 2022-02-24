@@ -1,0 +1,8 @@
+# resumeCode for (SAM) cloud Resume Challenge
+
+Even though the backend is relatively simple and can be assembled in a few minutes in the AWS Console, it's still not the most convenient way, especially if you need to update or delete something. Fortunately, AWS has our back and offers the ability to provision our cloud infrastructure in a number of ways. In this case, we use AWS Serverless Application Model (SAM), an Infrastructure as Code (IaC) solution that allows us to define and build our serverless application using a single YAML template. Among other things, this allows us to keep and update our infrastructure together with our codebase and, most importantly, to create an application infrastructure that can be reproduced over and over again.
+
+Even though AWS SAM takes some of the work off our shoulders, currently updating the website still means some manual effort. AWS SAM has to be installed locally on the developer PC, the application has to be built and then deployed. At the same time, the public/ folder has to be uploaded to S3 every time changes are made to the frontend. All this costs time and should therefore be automated. Since we have everything from application code to cloud infrastructure stored in our Git repository anyway, we can easily leverage CI/CD solutions like GitHub Actions. This allows us to define our entire deployment workflow once again in a single YAML file. This deployment workflow can then be configured to execute on each push to the master branch, updating the entire application stack without any additional intervention by us.
+
+#### This is my submission for the SAM section of the AWS Cloud Resume Challenge to provide the project with True Serverless functionality.
+
