@@ -1,0 +1,29 @@
+# Dependency Review — added by Takumo
+# Reviews dependency changes for known vulnerabilities on pull requests.
+# https://github.com/actions/dependency-review-action
+
+name: Dependency Review
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Dependency Review
+        uses: actions/dependency-review-action@v4
+        # This step requires Dependency graph to be enabled in repo settings
+        continue-on-error: true
+        with:
+          fail-on-severity: high
+          comment-summary-in-pr: always
